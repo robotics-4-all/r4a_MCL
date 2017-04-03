@@ -1,0 +1,8 @@
+<launch>
+  <node type="map_server" pkg="map_server" name="map_server" output="screen" args="$(find art_map_loader)/maps/lab.yaml"/>
+
+  <rosparam file="$(find art_localization_particle_filters_ogm)/cfg/params.yaml" command="load" />
+
+  <node type="localization" pkg="art_localization_particle_filters_ogm" name="localization" output="screen" />
+
+</launch>
